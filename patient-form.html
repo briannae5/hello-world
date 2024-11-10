@@ -1,0 +1,596 @@
+ <!-- 
+    Name: Brianna Evans 
+    File: homework1.html
+    Date Created: 2024-09-10
+    Date Updated: 2024-09-20
+    Purpose: MIS 3371 Homework 1 stems from learning HTML and creating a form.
+--><html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Brianna's Homework 1</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="header"> 
+            <table width="100%">
+                <tr>
+                    <td>
+                        <img 
+                            id="logo" 
+                            src="./mis3371/thmclogo.png" 
+                            alt="Tomball Health Medical Center"
+                        >
+                    </td>
+                    <td valign="top">Tomball Health Medical Center </td>
+                    <td valign="bottom" align="right">Today's date: <span id="today">Date goes here </span></td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div id="body">
+<form action="homework1-thanks.html">
+   <table class="form">
+    <tbody>
+    <tr class="form">
+        <th class="form" colspan="3">REGISTRATION FORM</th>
+    </tr>
+    <tr class="form">
+        <td align="left">
+            <label for="Fname">First NAME</label>
+            <label for="Mini">MI</label>
+            <label for="Lname">LAST</label>
+        </td>
+        <td> 
+             <input type="text"
+                    size="25"
+                    maxlength="30" 
+                    id="fname" 
+                    name="fname" 
+                    required 
+                    title="Letter, apostrophes, and dashes only."
+                    pattern= "[a-zA-Z']{1,30}
+                    onblur="validateFname()"
+                    placeholder="(James)"
+                    />
+                    </br>
+                    <span class="error" id="fname-error"></span>
+            <input type="text" 
+                    size="1"
+                    maxlength="1" 
+                    id="mini" 
+                    name="mini" 
+                    required
+                    title="Letters only."
+                    pattern= "[a-zA-Z']{0,1}
+                    onblur="validateMini()"
+                    placeholder="A"
+                    />
+                    </br>
+                    <span class="error" id="mini-error"></span>
+
+            <input type="text"
+                    size="20"
+                    maxlength="30" 
+                    id="lname" 
+                    name="lname" 
+                    required
+                    title="Letter, apostrophes, and dashes only."
+                    pattern= "[a-zA-Z']{0,30}
+                    onblur="validateLname()"
+                    placeholder="(West)"
+                    />
+                    </br>
+                    <span class="error" id="lname-error"></span>
+            
+        <span id="name_text"></td>
+    </tr>
+    <tr  class="form">
+        <td align="left">
+            <label for="address1" >Address Line 1</label>
+        </td>
+        <td>
+            <input type="text" 
+                    size="30" 
+                    minlength="4"
+                    maxlength="30" 
+                    id="address1" 
+                    name="address1" 
+                    required
+                    oninvalid="this.setCustomValidity('At least 1 address line Required')"
+                    oninput="this.setCustomValidity('')"
+                    placeholder="1234 Wood Trace St"
+                    onblur="validateAddress1()"
+                    />
+                    </br>
+                    <span class="error" id="address1-error"></span>
+    </tr>
+    <tr  class="form">
+        <td align="left">
+            <label for="addr2">Address Line 2</label>
+        </td>
+        <td>
+            <input type="text" 
+                    size="30" 
+                    maxlength="30" 
+                    id="addr2" 
+                    name="addr2" 
+                    placeholder="Apt #, etc..."
+            >
+            <span id="addr2_text">
+        </td>
+    <tr class="form">
+        <td align="left">
+            <label for="city">City,</label>
+            <label for="state">ST</label>
+            <label for="zcode">Zip</label>
+        </td>
+        <td>
+            <input type="text" 
+                    size="10" 
+                    maxlength="30" 
+                    id="city" 
+                    name="city" 
+                    required
+                    oninvalid="this.setCustomValidity('You forgot City')"
+                    oninput="this.setCustomValidity('')"
+                    placeholder="(Houston)"
+            >
+            <select required>
+                <option value=""></option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+            <input type="text" 
+                    pattern="[0-9]{5}"
+                    size="5"
+                    maxlength="5" 
+                    id="zcode" 
+                    name="zcode" 
+                    required
+                    title="Numbers only."
+                    oninvalid="this.setCustomValidity('5 Digit Zip/Postal Code required')"
+                    oninput="this.setCustomValidity('')"
+                    placeholder="00000"
+                    pattern="[0-9]{5}"
+                    />
+                    </br>
+                    <span class="error" id="zcode-error"></span>
+
+            >
+            <span id="City_text"><span id="State_text"> 
+        </td>
+    </tr>
+    <tr class="form">
+        <td align="left">
+            <label for="phnum">Phone #</label>
+        </td>
+        <td>
+            <input type="text" 
+                    size="13" 
+                    maxlength="13" 
+                    id="phnum" 
+                    name="phnum" 
+                    required
+                    placeholder="(281)123-4321"
+                    title="Please enter your phone number."
+                    onblur="validatePhnum()"
+                    />
+                    </br>
+    <span class="error" id="phnum-error"></span>
+            <span id="phone_text">  
+        </td>
+      </tr>
+    <tr class="form">
+           <td align="left">
+              <label for="SSN">SSN:</label>
+           </td>
+           <td>  
+        <input type="text" 
+                size="8"
+                maxlength="11"
+                id="ssn" 
+                name="SSN" 
+                required
+                title="Numbers only."
+                placeholder="123-45-6789" 
+                onblur="validateSsn()"
+                pattern="\d{3}-?\d{2}-?\d{4}"
+                />
+                </br>
+    <span class="error" id="ssn-error"></span>
+        <span id="SSN_text">
+          </td>
+        </tr>
+      <tr class="form">
+            <td align="left">
+<label for="email">Email:</label>
+            </td>
+            <td>
+        <input type="email" 
+              id="email" 
+              name="email"
+              size="20" 
+              maxlength="40"
+              required
+              title="Pleast enter your email address."
+               placeholder="jameswest@yahoo.com"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+              onblur="validateEmail()"
+              />
+              </br>
+    <span class="error" id="email-error"></span>
+        <span id="Email_text">
+</td>
+</tr>
+<tr>
+  <td class="td1"><label for="dob">Date of Birth:</label></td>
+  <td>
+    <input
+    type="date"
+    id="dob"
+    name="dob"
+    required
+    onblur="validateDob()"
+    />
+    </br>
+    <span class="error" id="dob-error"></span>
+    </td>
+            </tr>
+          <tr class="form">
+              <td align="left">
+<label for="gender">Gender:</label>
+<li><input type="radio" name="m" value="Male" /><span>Male</span></br>
+<li><input type="radio" name="m" value="Female" /><span>Female</span></br>
+<li><input type="radio" name="m" value="Transgender" /><span>Transgender</span></br>
+</td>
+ </tr>
+          <tr class="form">
+          <td align="left">
+<label for="insurance">Do you have Insurance?:</label>
+<li><input type="radio" name="Y" value="Yes" /><span>Yes</span></li>
+<li><input type="radio" name="Y" value="No" /><span>No</span></li>
+</td>
+</tr>
+          <tr class="form">
+          <td align="left">
+<label for="vaccination">Are you vaccinated?:</label>
+<li><input type="radio" name="fY" value="Yes" /><span>Yes</span></li>
+<li><input type="radio" name="fY" value="No" /><span>No</span></li>
+</td>
+</tr>
+          <tr class="form">
+              <td align="left">
+<label for="comments">Describe your Symptoms:</label>
+<td>
+<textarea id="comments" name="comments" placeholder="I have been experiencing..." size="100" maxlength="150" ></textarea>
+        <span id="comments_text">
+</td>
+</tr>
+          <tr class="form">
+              <td align="left">
+<div>
+<label for="checkbox">Check all that apply:</label><br>
+  <input type="checkbox" id="symptom1" name="symptom1" value="I have a cough">
+  <label for="symptom1"> Cough</label><br>
+  <input type="checkbox" id="symptom2" name="symptom2" value="I have a running nose">
+  <label for="symptom2"> Running Nose</label><br>
+  <input type="checkbox" id="symptom3" name="symptom3" value="I have body shivers">
+  <label for="symptom3"> Body Shivers</label><br>
+  <input type="checkbox" id="symptom4" name="symptom4" value="I have a fever">
+  <label for="symptom4"> Fever</label><br>
+  <input type="checkbox" id="symptom5" name="symptom5" value="I have a sore throat">
+  <label for="symptom5"> Sore Throat</label><br>
+  <input type="checkbox" id="symptom6" name="symptom6" value="I have teary eyes">
+  <label for="symptom6"> Teary Eyes</label><br><br>
+</td>
+</tr>
+          <tr class="form">
+              <td align="left">
+<p>Scale 1-10 How are you feeling? (1 is best and 10 is the worst)</p>
+<div class="slidecontainer">
+  <input type="range" min="1" max="10" value="10" class="slider" id="myRange">
+  <p>Value: <span id="demo"></span></p>
+</div>
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+</td>
+<style>
+/* Style all input fields */
+/*input {
+  width: 70`%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 15px;
+  font-size: 15px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -15px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -15px;
+  content: "✖";
+}
+</style>
+</head>
+<body>
+
+<tr>
+  <td class="td1"><label for="uname">Username:</label></td>
+  <td>
+           <input 
+           type="text" 
+           id="uname" 
+           name="uname"
+           minlength="5" 
+           maxlength="15"
+           required
+           title="Username must contain at least 5 characters. Cannot start with a number."
+           placeholder:"jwest16"
+           onblur="validateUname"
+           />
+           </br>
+    <span class="error" id="uname-error"></span>
+    </td>
+    </tr>
+    <tr>
+  <td class="td1"><label for="psw">Password:</label></td>
+  <td>
+            <input 
+            type="password" 
+            id="psw" 
+            name="psw" 
+            minlength="8"
+            maxlength="30"
+            required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+            required
+            placeholder="Required"
+            onblur="valdatePsw()"
+            oninput="valdatePsw()"
+            onfocus="valdatePsw()"
+            />
+            </br>
+    <span class="error" id="psw-error"></span>
+     </td>
+     </tr>
+     <tr>
+      <td class="td1"><label for="con_pword">Confirm Password:</label></td>
+      <td>
+        <input
+        type="password"
+        name="con_pword"
+        id="con_pword"
+        minlength="8"
+        maxlength="30"
+        required
+        title="Please confirm your password"
+        placeholder="Required"
+        onblur="valdateconfirmPword()"
+        oninput="valdateconfirmPword()"
+         onfocus="valdateconfirmPword()"
+         />
+         </br>
+    <span class="error" id="pword2-error"></span>
+    </td>
+    </tr>
+
+  </form>
+</div>
+
+<div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+				
+<script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+
+
+      <tr>        
+        <td class="td1" colspan="4">
+            <center>
+            <input type="submit" name="submit" id="submit" style="font-family: 'optima', sans-serif;">
+            &nbsp;&nbsp;&nbsp;
+            <input type="reset" name="reset" id="reset" style="font-family: 'optima', sans-serif;">
+            &nbsp;&nbsp;&nbsp;
+            <input type="button" name="review" id="review" value="Review" style="font-family: 'optima', sans-serif;">
+            &nbsp;&nbsp;&nbsp;
+            </center>
+        </td>
+      </tr>
+  </table>
+  </div>
+  <div class="pword-message">
+    <span id="msg1"></span> <br/>
+    <span id="msg2"></span> <br/>
+    <span id="msg3"></span> <br/>
+    <span id="msg4"></span> <br/>
+    <span id="msg5"></span> <br/>
+    <span id="msg6"></span> <br/>
+    <span id="msg7"></span> <br/>
+    <span id="mpword2-error"></span> <br/>
+    </div>
+      <center>
+        <p id="showInput"></p>
+        </center>
+        </div>
+        </center>
+    
+</form> 
+      </div>
+        <div id="footer"
+            <hr>
+            <footer>
+    <ul class="footer-links align-left">
+      <li><a href="https://facebook.com/thmc77375">Contact us!</a></li>
+    </ul>
+</footer>
+        </div>
+        <!-- Load external JavaScript -->
+        <script src="homework2.js"></script>
+        
+ <script>
+    document.getElementById("today").innerHTML = new Date().toLocaleDateString();
+</script>
+</body>
+<!-- End of file: homework1.html -->
+</html>

@@ -1,0 +1,134 @@
+ /* 
+Name: Brianna Evans
+ File: hw2.css
+ Date Created: 2024-10-09
+ Date Updated: 2024-10-19
+ Purpose: CSS File is for MIS 3371 HW2
+ */
+header {
+  width: 100%;
+  background-color: darkgray;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: grey;
+    margin: 0;
+    height: 100%;
+    min-height: 100vh; /*make sure page is the height of the viewport*/
+}
+form {
+  flex-grow: 1;
+}
+h1, h2 {
+  text-align: center;
+  font-family: "Copperplate";
+  font-weight: normal;
+  flex-grow: 1;
+}
+main {
+  text-align: center;
+  font-family: "Copperplate", fantasy;
+  font-weight: normal;
+  flex-grow: 1;
+}
+.image {
+  text-align: left;
+}
+.td1 {
+  text-align: right;
+  font-family: "optima", sans-serif;
+  font-weight: normal;
+}
+th {
+  text-align: center;
+  font-family: "optima", sans-serif;
+  font-weight: bold;
+}
+footer {
+  position: flex;
+  bottom: 0;
+  width: 100%;
+  background-color: darkgray;
+  height: 2.5 rem;
+}
+
+#footer {
+  text-align: right;
+  font-family: "optima", sans-serif;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label {
+  text-align: right;
+  font-family: "optima", sans-serif;
+  font-weight: normal;
+}
+input {
+  text-align: left;
+  font-family: "optima", sans-serif;
+  font-weight: normal;
+}
+
+textarea {
+  text-align: left;
+  font-family: "optima", sans-serif;
+  font-weight: normal;
+}
+
+#today {
+  text-align: left;
+  font-family: "optima", sans-serif;
+  font-weight: normal;
+}
+
+p {
+  text-align: right;
+  font-family: "optima", sans-serif;
+  font-weight: normal;
+}
+
+
+.error {
+  color: crimson;
+  font-size: 12px;
+  font-family: "optima", sans-serif;
+  font-weight: normal;
+}
+.pword-message {
+text-align: right;
+font-family: "optima", sans-serif;
+font-weight: normal;
+position: relative;
+left: 100px;
+background: transparent;
+padding: 10px;
+border-spacing: 2px;
+border-radius: 20px;
+color: red;
+}
+
+#review {
+  margin-top: 5px;
+}
+
+table.output,
+tr.output,
+td.output{
+  width: 500px;
+  background-color: lightblue;
+padding: 10px;
+border-spacing: 2px;
+border-radius: 20px;
+color: black;
+}
+
+td.output {
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.227);
+  padding: 10px;
+  border-spacing: 2px;
+}
